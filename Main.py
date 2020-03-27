@@ -86,10 +86,12 @@ detail = ""
 for sentence in sentences:
     if sentence == "":
         continue
+    id += 1
+    print(id)
     print(sentence)
+
     detail += id.__str__() + ".wav\n";
     detail += sentence + "\n";
-    id += 1
     while(True):
         while not keyboard.is_pressed("right"):
             pass
@@ -108,4 +110,5 @@ for sentence in sentences:
             break
 f = io.open("detail.dat",'w',encoding='utf8')
 f.write(detail)
+
 f.close()
